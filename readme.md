@@ -1,4 +1,4 @@
-## LTO Network.
+## LTO Network
 ---
 A Node-RED node wrapper to make calls to a LTO Node API and retrieves information of the LTO Network.
 
