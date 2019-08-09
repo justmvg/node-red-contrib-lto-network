@@ -2,8 +2,8 @@
 ---
 A Node-RED node wrapper to make calls to a LTO Node API and retrieves information of the LTO Network.
 
-<img src="https://github.com/justmvg/node-red-contrib-lto-network/blob/master/readme/node-red.jpg" />
-<img src="https://github.com/justmvg/node-red-contrib-lto-network/blob/master/readme/2.jpg" />
+<img src="https://raw.githubusercontent.com/justmvg/node-red-contrib-lto-network/master/readme/node-red.jpg" />
+<img src="https://raw.githubusercontent.com/justmvg/node-red-contrib-lto-network/master/readme/2.jpg" />
 
 It allows you to easily get LTO Network information in your Node-RED flows. Output of the nodes result in JSON format just like the LTO Node API does
 Configure the node of your choise which offers API usage.
@@ -25,7 +25,7 @@ At this moment, three modules are available:
 
 And more to follow!
 
-<img src="https://github.com/justmvg/node-red-contrib-lto-network/blob/master/readme/1.jpg" />
+<img src="https://raw.githubusercontent.com/justmvg/node-red-contrib-lto-network/master/readme/1.jpg" />
 
 Links:
 LTO Community profile: https://community.lto.network/user/michael21/profile/
