@@ -1,0 +1,24 @@
+{
+  "name": "node-red-contrib-lto-network",
+  "version": "1.0.0",
+  "description": "Custom node for Node-Red automation.",
+  "main": "index.js",
+  "node-red": {
+    "nodes": {
+      "lto-network": "index.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red",
+    "lto",
+    "lto network",
+    "blockchain",
+    "liquid task orchestration",
+    "legal things one"
+  ],
+  "author": "JustMVG",
+  "license": "ISC"
+}
