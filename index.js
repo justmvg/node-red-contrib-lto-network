@@ -1,9 +1,10 @@
 var request = require('request');
 var request = request.defaults({ jar: true })
 
-var defaultAPI = 'https://nodes.lto.network';
 
 module.exports = function (RED) {
+    var defaultAPI = "https://nodes.lto.network";
+    
     function GetWalletBalance(config) {
         RED.nodes.createNode(this, config);
 
