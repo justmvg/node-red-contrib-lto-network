@@ -63,14 +63,14 @@ module.exports = function (RED) {
         var node = this;
         node.on('input', function (msg) {
 
-            if (typeof config.endpoint === "undefined") {
+            if (typeof config.endpoint === "undefined" || config.endpoint == "") {
                 //msg.payload = 'No API endpoint configured. Fallback to default.';
                 this.status({ fill: "red", shape: "dot", text: "Default LTO API" });
                 //node.send(msg);
                 config.endpoint = defaultAPI;
             }
             
-            if (typeof config.address === "undefined" || config.address == "") {
+            if (typeof config.address === "undefined") {
                 msg.payload = 'No LTO Wallet Address configured.';
                 this.status({ fill: "red", shape: "dot", text: msg.payload });
                 node.send(msg);
