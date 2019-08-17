@@ -4,7 +4,7 @@ var request = request.defaults({ jar: true })
 
 module.exports = function (RED) {
     var defaultAPI = "https://nodes.lto.network";
-    
+
     function GetWalletBalance(config) {
         RED.nodes.createNode(this, config);
 
@@ -70,7 +70,7 @@ module.exports = function (RED) {
                 config.endpoint = defaultAPI;
             }
             
-            if (typeof config.address === "undefined") {
+            if (typeof config.address === "undefined" || config.address == "") {
                 msg.payload = 'No LTO Wallet Address configured.';
                 this.status({ fill: "red", shape: "dot", text: msg.payload });
                 node.send(msg);
@@ -78,11 +78,6 @@ module.exports = function (RED) {
                 var ltoEndpoint = config.endpoint;
                 var ltoAddress = config.address;
 
-                if (ltoEndpoint == "") {
-                    msg.payload = 'Empty API endpoint.';
-                    this.status({ fill: "red", shape: "dot", text: msg.payload });
-                    node.send(msg);
-                } else {
                     if (typeof msg.payload.address !== "undefined" && msg.payload.address != "") {
                         ltoAddress = msg.payload.address;
                     }
@@ -106,7 +101,7 @@ module.exports = function (RED) {
                         msg.payload = body2json;
                         node.send(msg);
                     });
-                }
+                
             }
         });
     }
