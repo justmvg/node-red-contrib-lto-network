@@ -1,6 +1,8 @@
 var request = require('request');
 var request = request.defaults({ jar: true })
 
+var defaultAPI = 'https://nodes.lto.network';
+
 module.exports = function (RED) {
     function GetWalletBalance(config) {
         RED.nodes.createNode(this, config);
@@ -61,10 +63,13 @@ module.exports = function (RED) {
         node.on('input', function (msg) {
 
             if (typeof config.endpoint === "undefined") {
-                msg.payload = 'No API endpoint configured.';
-                this.status({ fill: "red", shape: "dot", text: msg.payload });
-                node.send(msg);
-            } else if (typeof config.address === "undefined") {
+                //msg.payload = 'No API endpoint configured. Fallback to default.';
+                this.status({ fill: "red", shape: "dot", text: "Default LTO API" });
+                //node.send(msg);
+                config.endpoint = defaultAPI;
+            }
+            
+            if (typeof config.address === "undefined") {
                 msg.payload = 'No LTO Wallet Address configured.';
                 this.status({ fill: "red", shape: "dot", text: msg.payload });
                 node.send(msg);
