@@ -11,11 +11,11 @@ module.exports = function (RED) {
         var node = this;
         node.on('input', function (msg) {
 
-            if (typeof config.endpoint === "undefined") {
-                msg.payload = 'No API endpoint configured.';
-                this.status({ fill: "red", shape: "dot", text: msg.payload });
-                node.send(msg);
-            } else if (typeof config.address === "undefined") {
+            if (typeof config.endpoint === "undefined" || config.endpoint == "") {
+                config.endpoint = defaultAPI;
+            }
+            
+            if (typeof config.address === "undefined") {
                 msg.payload = 'No LTO Wallet Address configured.';
                 this.status({ fill: "red", shape: "dot", text: msg.payload });
                 node.send(msg);
@@ -23,11 +23,6 @@ module.exports = function (RED) {
                 var ltoEndpoint = config.endpoint;
                 var ltoAddress = config.address;
 
-                if (ltoEndpoint == "") {
-                    msg.payload = 'Empty API endpoint.';
-                    this.status({ fill: "red", shape: "dot", text: msg.payload });
-                    node.send(msg);
-                } else {
                     if (typeof msg.payload.address !== "undefined" && msg.payload.address != "") {
                         ltoAddress = msg.payload.address;
                     }
@@ -51,7 +46,7 @@ module.exports = function (RED) {
                         msg.payload = body2json;
                         node.send(msg);
                     });
-                }
+                
             }
         });
     }
@@ -64,9 +59,6 @@ module.exports = function (RED) {
         node.on('input', function (msg) {
 
             if (typeof config.endpoint === "undefined" || config.endpoint == "") {
-                //msg.payload = 'No API endpoint configured. Fallback to default.';
-                this.status({ fill: "red", shape: "dot", text: "Default LTO API" });
-                //node.send(msg);
                 config.endpoint = defaultAPI;
             }
             
@@ -113,11 +105,11 @@ module.exports = function (RED) {
         var node = this;
         node.on('input', function (msg) {
 
-            if (typeof config.endpoint === "undefined") {
-                msg.payload = 'No API endpoint configured.';
-                this.status({ fill: "red", shape: "dot", text: msg.payload });
-                node.send(msg);
-            } else if (typeof config.address === "undefined") {
+            if (typeof config.endpoint === "undefined" || config.endpoint == "") {
+                config.endpoint = defaultAPI;
+            }
+            
+            if (typeof config.address === "undefined") {
                 msg.payload = 'No LTO Wallet Address configured.';
                 this.status({ fill: "red", shape: "dot", text: msg.payload });
                 node.send(msg);
@@ -125,11 +117,6 @@ module.exports = function (RED) {
                 var ltoEndpoint = config.endpoint;
                 var ltoAddress = config.address;
 
-                if (ltoEndpoint == "") {
-                    msg.payload = 'Empty API endpoint.';
-                    this.status({ fill: "red", shape: "dot", text: msg.payload });
-                    node.send(msg);
-                } else {
                     if (typeof msg.payload.address !== "undefined" && msg.payload.address != "") {
                         ltoAddress = msg.payload.address;
                     }
@@ -153,7 +140,7 @@ module.exports = function (RED) {
                         msg.payload = body2json;
                         node.send(msg);
                     });
-                }
+                
             }
         });
     }
