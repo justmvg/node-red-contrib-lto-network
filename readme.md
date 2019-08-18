@@ -18,14 +18,15 @@ Make it up yourself! No restrictions here.
 Examples: 
 Graph your balance over time, automate checks of wallet balances, build notifications on wallet changes, etc… 
 
-At this moment, three modules are available: 
+At this moment, four modules are available: 
 - Get balance
 - Validate address
 - Get active leases
+- Get transactions
 
 And more to follow!
 
-<img src="https://raw.githubusercontent.com/justmvg/node-red-contrib-lto-network/master/readme/1.jpg" />
+<img src="https://raw.githubusercontent.com/justmvg/node-red-contrib-lto-network/master/readme/1.png" />
 
 Links:
 LTO Community profile: https://community.lto.network/user/michael21/profile/

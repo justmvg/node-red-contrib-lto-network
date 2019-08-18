@@ -130,7 +130,7 @@
 <script type="text/x-red" data-help-name="Validate LTO Address">
     <p>A node that returns true or false for a given LTO wallet address.</p>
     <h2>Node Input</h2>
-    <p>Input can receive a json object <code>address</code> which will be used to validate the address.<br />It is not neccesary as it's also possible to configure the address in the node configuration.</p><p>Please note that if the <code>msg.payload.address</code> value is set, it overrides the address given in the configuration of the node.</p>
+    <p>Input can receive a json object <code>address</code> which will be used to get the transactions of the address.<br />It is not neccesary as it's also possible to configure the address in the node configuration.</p><p>Please note that if the <code>msg.payload.address</code> value is set, it overrides the address given in the configuration of the node.</p>
     <h2>Node Output</h2>
     <p>Output: Returns a json object with <code>address</code> as a string and a boolean result for <code>valid</code></p>
 </script>
