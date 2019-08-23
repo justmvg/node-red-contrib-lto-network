@@ -5,7 +5,9 @@
   "main": "index.js",
   "node-red": {
     "nodes": {
-      "lto-network": "index.js",
+      "get-balance": "nodes/get-balance/get-balance.js",
+      "get-active-leases": "nodes/get-active-leases/get-active-leases.js",
+      "get-transactions": "nodes/get-transactions/get-transactions.js",
       "validate-address": "nodes/validate-address/validate-address.js"
     }
   },
