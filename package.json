@@ -1,11 +1,14 @@
 {
   "name": "node-red-contrib-lto-network",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Custom node for Node-Red automation.",
   "main": "index.js",
   "node-red": {
     "nodes": {
-      "lto-network": "index.js"
+      "get-balance": "nodes/get-balance/get-balance.js",
+      "get-active-leases": "nodes/get-active-leases/get-active-leases.js",
+      "get-transactions": "nodes/get-transactions/get-transactions.js",
+      "validate-address": "nodes/validate-address/validate-address.js"
     }
   },
   "scripts": {
@@ -22,11 +25,10 @@
   "author": "JustMVG",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
     "request": "^2.88.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justmvg/node-red-contrib-lto-network.git"
+    "url": "https://github.com/justmvg/node-red-contrib-lto-network.git"
   }
 }
