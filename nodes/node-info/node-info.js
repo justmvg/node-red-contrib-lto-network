@@ -49,7 +49,7 @@ module.exports = function (RED) {
                 node.send(msg);
             }).catch((err) => {
                 this.status({ fill: "yellow", shape: "dot", text: 'Check configuration' })
-                node.send(JSON.parse({"error": err}));
+                node.send(err);
             })
 
 
