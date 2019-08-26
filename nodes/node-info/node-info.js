@@ -19,7 +19,6 @@ module.exports = function (RED) {
                 request.get(ltoEndpoint + '/node/status', (err, response, body) => {
                     if (err) {
                         reject('Failed:', err)
-                        this.status({ fill: "red", shape: "dot", text: 'LTO Info could not be retrieved' })
                     } else {
                         if(JSON.parse(body).hasOwnProperty('blockchainHeight')){
                             resolve(JSON.parse(body))
@@ -34,7 +33,6 @@ module.exports = function (RED) {
                 request.get(ltoEndpoint + '/node/version', (err, response, body) => {
                     if (err) {
                         reject('Failed:', err)
-                        this.status({ fill: "red", shape: "dot", text: 'LTO Info could not be retrieved' })
                     } else {
                         if(JSON.parse(body).hasOwnProperty('version')){
                             resolve(JSON.parse(body))
