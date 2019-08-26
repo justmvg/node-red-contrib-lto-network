@@ -18,6 +18,7 @@ module.exports = function (RED) {
             var statusCall = new Promise(function(resolve,reject){
                 request.get(ltoEndpoint + '/node/status', (err, response, body) => {
                     if (err) {
+                        this.status({ fill: "red", shape: "dot", text: 'LTO Info could not be retrieved' });
                         reject('Failed:', err)
                     } else {
                         resolve(JSON.parse(body))
@@ -27,6 +28,7 @@ module.exports = function (RED) {
             var versionCall = new Promise(function(resolve,reject){
                 request.get(ltoEndpoint + '/node/version', (err, response, body) => {
                     if (err) {
+                        this.status({ fill: "red", shape: "dot", text: 'LTO Info could not be retrieved' });
                         reject('Failed:', err)
                     } else {
                         resolve(JSON.parse(body))
