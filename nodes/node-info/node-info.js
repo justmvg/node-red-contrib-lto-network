@@ -21,7 +21,12 @@ module.exports = function (RED) {
                         reject('Failed:', err)
                         this.status({ fill: "red", shape: "dot", text: 'LTO Info could not be retrieved' })
                     } else {
-                        resolve(JSON.parse(body))
+                        if(JSON.parse(body).hasOwnProperty('blockchainHeight')){
+                            resolve(JSON.parse(body))
+                        }else {
+                            console.log(body)
+                            reject('Failed: No valid response.')
+                        }
                     }
                 })
             })
@@ -31,7 +36,12 @@ module.exports = function (RED) {
                         reject('Failed:', err)
                         this.status({ fill: "red", shape: "dot", text: 'LTO Info could not be retrieved' })
                     } else {
-                        resolve(JSON.parse(body))
+                        if(JSON.parse(body).hasOwnProperty('version')){
+                            resolve(JSON.parse(body))
+                        }else {
+                            console.log(body)
+                            reject('Failed: No valid response.')
+                        }
                     }
                 })
             })
@@ -41,6 +51,8 @@ module.exports = function (RED) {
                 var obj = { ...val[0], ...val[1] }
                 msg.payload = obj;
                 node.send(msg);
+            }).catch((err) => {
+                this.status({ fill: "yellow", shape: "dot", text: 'Something seems not to be right' })
             })
 
 
