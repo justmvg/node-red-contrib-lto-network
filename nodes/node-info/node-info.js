@@ -50,7 +50,8 @@ module.exports = function (RED) {
                 msg.payload = obj;
                 node.send(msg);
             }).catch((err) => {
-                this.status({ fill: "yellow", shape: "dot", text: 'Something seems not to be right' })
+                this.status({ fill: "yellow", shape: "dot", text: 'Check configuration' })
+                node.send(JSON.parse({"error": err}));
             })
 
 
