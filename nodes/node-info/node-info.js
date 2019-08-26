@@ -23,7 +23,6 @@ module.exports = function (RED) {
                         if(JSON.parse(body).hasOwnProperty('blockchainHeight')){
                             resolve(JSON.parse(body))
                         }else {
-                            console.log(body)
                             reject('Failed: No valid response.')
                         }
                     }
@@ -37,7 +36,6 @@ module.exports = function (RED) {
                         if(JSON.parse(body).hasOwnProperty('version')){
                             resolve(JSON.parse(body))
                         }else {
-                            console.log(body)
                             reject('Failed: No valid response.')
                         }
                     }
