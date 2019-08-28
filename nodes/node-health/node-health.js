@@ -6,7 +6,7 @@ var defaultPort = "6868";
 
 module.exports = function (RED) {
     
-    function GetNodeInfo(config) {
+    function GetNodeHealth(config) {
         RED.nodes.createNode(this, config);
 
         var node = this;
@@ -97,5 +97,5 @@ module.exports = function (RED) {
             })                
         });
     }
-    RED.nodes.registerType("Node health", GetNodeInfo);
+    RED.nodes.registerType("Node health", GetNodeHealth);
 }
