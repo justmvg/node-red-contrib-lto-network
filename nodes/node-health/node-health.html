@@ -10,7 +10,7 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: "node-32.png",
+        icon: "health-32.png",
         label: function () {
             return this.name || "Node health";
         }
@@ -23,16 +23,16 @@
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
     <div class="form-row">
-        <label for="node-input-endpoint"><i class="icon-tag"></i> Node IP Address / Domain</label>
+        <label for="node-input-endpoint"><i class="icon-tag"></i> Node</label>
         <input type="text" id="node-input-endpoint" placeholder=""><br />
-        <sub>Defaults to LTO Network node.</sub>
+        <sub>Defaults to LTO Network node. Do not include http:// or https://</sub>
     </div>
     <div class="form-row">
-        <label for="node-input-nodeport"><i class="icon-tag"></i> Node listening port</label>
+        <label for="node-input-nodeport"><i class="icon-tag"></i> Port</label>
         <input type="text" id="node-input-nodeport" placeholder="6868"><br />
     </div>
     <div class="form-row">
-        <label for="node-input-apiport"><i class="icon-tag"></i> Node API port</label>
+        <label for="node-input-apiport"><i class="icon-tag"></i> API port</label>
         <input type="text" id="node-input-apiport" placeholder="6869"><br />
     </div>
 </script>
