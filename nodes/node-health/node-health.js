@@ -1,4 +1,4 @@
-const request = require('request')
+var request = require('request')
 const net = require('net')
 var request = request.defaults({ jar: true })
 var defaultAPI = "nodes.lto.network"
