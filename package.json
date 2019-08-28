@@ -9,7 +9,8 @@
       "get-active-leases": "nodes/get-active-leases/get-active-leases.js",
       "get-transactions": "nodes/get-transactions/get-transactions.js",
       "validate-address": "nodes/validate-address/validate-address.js",
-      "node-info": "nodes/node-info/node-info.js"
+      "node-info": "nodes/node-info/node-info.js",
+      "node-health": "nodes/node-health/node-health.js"
     }
   },
   "scripts": {

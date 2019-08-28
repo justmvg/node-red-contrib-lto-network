@@ -1,0 +1,51 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Node info', {
+        category: 'LTO Network',
+        color: '#bf77ff',
+        defaults: {
+            name: { value: "" },
+            endpoint: { value: "" },
+            nodeport: { value: "6868" },
+            apiport: { value: "6869" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "node-32.png",
+        label: function () {
+            return this.name || "Node info";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Node info">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-endpoint"><i class="icon-tag"></i> Node IP Address / Domain</label>
+        <input type="text" id="node-input-endpoint" placeholder=""><br />
+        <sub>Defaults to LTO Network node.</sub>
+    </div>
+    <div class="form-row">
+        <label for="node-input-nodeport"><i class="icon-tag"></i> Node listening port</label>
+        <input type="text" id="node-input-nodeport" placeholder="6868"><br />
+    </div>
+    <div class="form-row">
+        <label for="node-input-apiport"><i class="icon-tag"></i> Node API port</label>
+        <input type="text" id="node-input-apiport" placeholder="6869"><br />
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Node info">
+    <p>A node that checks the health of an LTO Node.</p>
+    <h2>Node Input</h2>
+    <p>Input can receive anything to trigger the action.</p>
+    <h2>Node Output</h2>
+    <p>Output: Returns a json object with the following information:</p>
+    <ul>
+        <li>node-available</li>
+        <li>api-available</li>
+        <li>balance</li>
+    </ul>
+</script>
