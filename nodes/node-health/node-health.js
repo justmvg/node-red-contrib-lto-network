@@ -97,5 +97,5 @@ module.exports = function (RED) {
             })                
         });
     }
-    RED.nodes.registerType("Node info", GetNodeInfo);
+    RED.nodes.registerType("Node health", GetNodeInfo);
 }

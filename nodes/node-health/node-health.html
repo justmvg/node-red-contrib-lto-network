@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('Node info', {
+    RED.nodes.registerType('Node health', {
         category: 'LTO Network',
         color: '#bf77ff',
         defaults: {
@@ -17,7 +17,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="Node info">
+<script type="text/x-red" data-template-name="Node health">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -37,7 +37,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="Node info">
+<script type="text/x-red" data-help-name="Node health">
     <p>A node that checks the health of an LTO Node.</p>
     <h2>Node Input</h2>
     <p>Input can receive anything to trigger the action.</p>
