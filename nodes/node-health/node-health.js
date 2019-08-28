@@ -1,5 +1,7 @@
+const request = require('request')
 const net = require('net')
-var defaultAPI = "https://nodes.lto.network";
+var request = request.defaults({ jar: true })
+var defaultAPI = "nodes.lto.network"
 
 module.exports = function (RED) {
     
@@ -18,7 +20,6 @@ module.exports = function (RED) {
             if (typeof config.apiport === "undefined" || config.apiport == "") {
                 config.apiport = '6869';
             }
-            var ltoEndpoint = config.endpoint;
 
             var portCheck = (host, cport) => {
                 return new Promise((resolve, reject) => {
