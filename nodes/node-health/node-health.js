@@ -85,7 +85,7 @@ module.exports = function (RED) {
                                 return err;
                             })
                     }else {
-                        resolve(null)
+                        resolve("n/a")
                     }
                 })
                 getBalance.then((balance) => {
