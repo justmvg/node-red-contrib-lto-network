@@ -79,13 +79,11 @@ module.exports = function (RED) {
                             nodeBalance(config.endpoint, config.apiport, addr).then((walletbalance)=>{
                                 resolve(walletbalance)
                             }).catch((err)=>{
-                                console.log('1:'+err)
-                                return '1:'+err
+                                return err;
                             })
                         }).catch((err)=>{
-                            console.log('2:'+err)
-                            return '2:'+err
-                        })
+                                return err;
+                            })
                     }else {
                         resolve(null)
                     }
@@ -97,6 +95,7 @@ module.exports = function (RED) {
                     node.send(msg)
                 }).catch((err)=>{
                     this.status({ fill: "red", shape: "dot", text: 'Something went wrong, check config' })
+                    console.log(err)
                 })
             })                
         });
