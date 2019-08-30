@@ -78,7 +78,11 @@ module.exports = function (RED) {
                         nodeWallet(config.endpoint, config.apiport).then((addr) => {
                             nodeBalance(config.endpoint, config.apiport, addr).then((walletbalance)=>{
                                 resolve(walletbalance)
+                            }).catch((err)=>{
+                                return '1:'+err;
                             })
+                        }).catch((err)=>{
+                            return '2:'+err;
                         })
                     }else {
                         resolve(null)
