@@ -79,10 +79,12 @@ module.exports = function (RED) {
                             nodeBalance(config.endpoint, config.apiport, addr).then((walletbalance)=>{
                                 resolve(walletbalance)
                             }).catch((err)=>{
-                                return '1:'+err;
+                                console.log('1:'+err)
+                                return '1:'+err
                             })
                         }).catch((err)=>{
-                            return '2:'+err;
+                            console.log('2:'+err)
+                            return '2:'+err
                         })
                     }else {
                         resolve(null)
