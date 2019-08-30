@@ -85,11 +85,11 @@ module.exports = function (RED) {
                                 return err;
                             })
                     }else {
-                        resolve("n/a")
+                        resolve({available: null})
                     }
                 })
                 getBalance.then((balance) => {
-                    this.status({ fill: "green", shape: "dot", text: 'node:'+config.endpoint })
+                    this.status({ fill: "green", shape: "dot", text: 'node: '+config.endpoint })
                     var obj = { "node-available": portres[0], "api-available": portres[1], "balance": balance.available }
                     msg.payload = obj
                     node.send(msg)
