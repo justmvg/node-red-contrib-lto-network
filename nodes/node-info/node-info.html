@@ -1,0 +1,44 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Node info', {
+        category: 'LTO Network',
+        color: '#bf77ff',
+        defaults: {
+            name: { value: "" },
+            endpoint: { value: "" },
+            address: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "node-32.png",
+        label: function () {
+            return this.name || "Node info";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Node info">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-endpoint"><i class="icon-tag"></i> API Endpoint</label>
+        <input type="text" id="node-input-endpoint" placeholder="<API Endpoint>"><br />
+        <sub>Defaults to LTO Network node.</sub>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Node info">
+    <p>A node that retrieves information from an LTO Node.</p>
+    <h2>Node Input</h2>
+    <p>Input can receive anything to trigger the action.</p>
+    <h2>Node Output</h2>
+    <p>Output: Returns a json object with the following information:</p>
+    <ul>
+        <li>blockchainHeight</li>
+        <li>stateHeight</li>
+        <li>updatedTimestamp</li>
+        <li>updatedDate</li>
+        <li>version</li>
+    </ul>
+</script>

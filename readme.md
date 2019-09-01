@@ -18,11 +18,13 @@ Make it up yourself! No restrictions here.
 Examples: 
 Graph your balance over time, automate checks of wallet balances, build notifications on wallet changes, etc… 
 
-At this moment, four modules are available: 
+At this moment, six modules are available: 
 - Get balance
 - Validate address
 - Get active leases
 - Get transactions
+- Node Info
+- Node Health
 
 And more to follow!
 
